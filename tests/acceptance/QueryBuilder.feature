@@ -135,3 +135,21 @@ Feature: QueryBuilder
       """
     When I run Psalm
     Then I see no errors
+
+  @QueryBuilder
+  Scenario: QueryBuilder::groupBy() accepts variadic arguments
+    Given I have the following code
+      """
+      builder()->groupBy('field1', 'field2')->distinct();
+      """
+    When I run Psalm
+    Then I see no errors
+    
+  @QueryBuilder
+  Scenario: QueryBuilder::addGroupBy() accepts variadic arguments
+    Given I have the following code
+      """
+      builder()->addGroupBy('field1', 'field2')->distinct();
+      """
+    When I run Psalm
+    Then I see no errors

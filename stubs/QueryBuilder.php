@@ -51,6 +51,18 @@ class QueryBuilder
     }
 
     /**
+     * @param string $predicate
+     * @param string ...$predicates
+     */
+    public function groupBy($predicate, ...$predicates): self {}
+
+    /**
+     * @param string $predicate
+     * @param string ...$predicates
+     */
+    public function addGroupBy($predicate, ...$predicates): self {}
+
+    /**
      * @param _WhereExpr|_WhereExpr[] $predicate
      * @param _WhereExpr              ...$predicates
      */
